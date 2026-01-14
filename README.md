@@ -9,6 +9,16 @@ A production-ready React + TypeScript frontend with provider-agnostic authentica
 - **Easy Provider Swap**: Change one environment variable to switch providers
 - **Production Ready**: Includes error handling, token refresh, protected routes
 - **Fully Testable**: Mock adapters for isolated unit testing
+- **CI/CD Ready**: Automated testing and deployment with GitHub Actions
+- **Containerized**: Docker support with multi-stage builds and nginx
+
+## Quick Links
+
+- 📖 [Architecture Deep Dive](./ARCHITECTURE.md)
+- 🚀 [Quick Deploy Guide](./QUICK_DEPLOY.md) - Deploy in 5 minutes
+- 📚 [Deployment Documentation](./DEPLOYMENT.md) - Complete deployment guide
+- 🧪 [Testing Guide](./TESTING.md)
+- ⚡ [Quick Start](./QUICKSTART.md)
 
 ## Architecture
 
@@ -269,6 +279,55 @@ This architecture intentionally avoids:
 - **Context**: Single source of truth for auth state
 - **Components**: No provider imports, only use `useAuth()` hook
 - **Config**: Single place to configure provider selection
+
+## Deployment
+
+This project includes complete CI/CD and containerization support for easy deployment.
+
+### Quick Deploy (3 minutes)
+
+Deploy to free hosting platforms:
+
+**Railway.app (Recommended):**
+1. Go to [railway.app](https://railway.app)
+2. Deploy from GitHub repo
+3. Add environment variables
+4. Done!
+
+**See [QUICK_DEPLOY.md](./QUICK_DEPLOY.md) for step-by-step instructions.**
+
+### What's Included
+
+- ✅ Multi-stage Dockerfile with nginx
+- ✅ GitHub Actions CI/CD pipeline
+- ✅ Automated testing before deployment
+- ✅ Docker image publishing to GHCR
+- ✅ Security scanning with Trivy
+- ✅ Configurations for Railway, Render, and Fly.io
+- ✅ Health check endpoint
+- ✅ SPA routing support
+- ✅ GZIP compression and security headers
+
+### CI/CD Pipeline
+
+On every push to `main`:
+1. Run tests and type checking
+2. Build Docker image
+3. Push to GitHub Container Registry
+4. Security scan
+5. Auto-deploy (if configured)
+
+**Image available at:** `ghcr.io/rupesh2k/supabaseauth:latest`
+
+### Supported Platforms
+
+| Platform | Free Tier | Setup Time | Auto-Deploy |
+|----------|-----------|------------|-------------|
+| Railway | 500 hrs/mo | 3 min | ✅ |
+| Render | 750 hrs/mo | 5 min | ✅ |
+| Fly.io | 3 VMs | 5 min | ✅ |
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete deployment guide.
 
 ## License
 
